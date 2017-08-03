@@ -1,0 +1,10 @@
+{% load md_extra %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ flatpage.title }}</title>
+</head>
+<body>
+{{ flatpage.content | md_to_html | safe }}
+</body>
+</html>

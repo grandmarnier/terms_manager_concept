@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{{ flatpage.title }}</title>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.7.1/showdown.min.js"></script>
+</head>
+<body>
+<template id="template">
+{{ flatpage.content }}	
+</template>
+
+<section id="output"></section>
+
+<script>
+var template = document.getElementById('template');
+var output = document.getElementById('output');
+var converter = new showdown.Converter(),
+    text      = template.innerHTML,
+    html      = converter.makeHtml(text);
+
+output.innerHTML = html;
+</script>
+</body>
+</html>
