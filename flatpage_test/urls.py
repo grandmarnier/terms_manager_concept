@@ -19,6 +19,7 @@ from django.contrib.flatpages import views
 
 
 urlpatterns = [
+    url(r'^terms/', include('terms.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^(?P<url>.*/)$', views.flatpage),
 ]
