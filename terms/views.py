@@ -12,7 +12,7 @@ def publish(request, page_id):
 		messages.add_message(request, messages.ERROR,
 							 'Page not found')
 	else:
-		html = render_to_string('pydown.html', {'flatpage': page})
+		html = render_to_string(page.template_name, {'flatpage': page})
 		file_name = 'media/{}.html'.format(page.title.strip('/'))
 		with open(file_name, 'w') as f:
 			f.write(html)
